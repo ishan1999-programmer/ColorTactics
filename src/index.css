@@ -16,13 +16,13 @@
 }
 
 .game{
-  width: 550px;
-  height: 750px;
-  background-color: #f7d9c4;
+  width: 480px;
+  height: 620px;
+  background-color: #f9d9c4;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 40px;
   align-items: center;
   padding-top: 30px;
   transition: all 0.5s ease;
@@ -34,26 +34,40 @@
 }
 
 .game_toggle_box{
-  width: 400px;
-  height: 80px;
+  width: 72.72%;
+  height: 10.66%;
   border-radius: 50px;
   background-color: white;
+  position: relative;
 }
 
 .game_toggler{
+  position: absolute;
   width: 50%;
-  height: 80px;
+  height: 100%;
   border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 60px;
+  font-size: 52px;
+  transition: left 0.5s ease;
+}
+
+.game_toggler_win_draw{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 52px;
   transition: all 0.5s ease;
 }
 
 .game_grid{
-  width: 450px;
-  height: 450px;
+  width: 81.81%;
+  height: 60%;
   display: grid;
   grid-template-columns: repeat(3,1fr);
   grid-template-rows: repeat(3,1fr);
@@ -64,7 +78,7 @@
   border: none;
   border: 2px solid #e8a2a2;
   background-color: hsl(25, 76%, 87%);
-  font-size: 80px;
+  font-size: 70px;
 }
 
 #grid_button:hover{
@@ -75,8 +89,8 @@
   cursor: pointer;
   border: none;
   border-radius: 20px;
-  width: 200px;
-  height: 45px;
+  width: 35%;
+  height: 8%;
   background-color: hsl(0, 60%, 77%);
   font-size: 30px;
   font-weight: 800;
@@ -108,6 +122,7 @@
 .game_overlay h1{
   font-size: 50px;
   font-weight: 800;
+  margin-bottom: 30px;
 }
 
 .game_overlay label{
@@ -116,6 +131,7 @@
 }
 
 .game_overlay input{
+  border: none;
   width: 50px;
   height: 30px;
   margin-left: 10px;
@@ -133,7 +149,8 @@
 #start_game{
   cursor: pointer;
   border: none;
-  padding: 12px 24px;
+  width: 160px;
+  height: 50px;
   font-size: 24px;
   border-radius: 15px;
   position: relative;
@@ -145,3 +162,185 @@
 #start_game:hover{
   background-color: hsl(174, 52%, 70%);
 }
+
+@media (width <= 830px) {
+  .game_overlay{
+    width: 650px;
+  }
+
+  .game_overlay h1{
+    font-size: 40px;
+  }
+}
+
+@media (width <= 680px) {
+  .game_overlay{
+    width: 500px;
+  }
+
+  .game_overlay label{
+    font-size: 24px;
+  }
+
+  .game_overlay input{
+    width: 45px;
+    height: 25px;
+  }
+
+  .x_o_box{
+    font-size: 90px;
+  }
+}
+
+@media (width <= 530px) {
+  .game_overlay{
+    width: 350px;
+    height: 430px;
+  }
+
+  .game_overlay h1{
+    font-size: 35px;
+  }
+
+  .game_overlay label{
+    font-size: 21px;
+  }
+
+  .game_overlay input{
+    width: 40px;
+    height: 20px;
+  }
+
+  .x_o_box{
+    font-size: 70px;
+  }
+
+  #start_game{
+    width: 140px;
+    height: 40px;
+    font-size: 21px;
+  }
+}
+
+@media (width<=380px) {
+  .game_overlay{
+    width: 290px;
+  }
+
+  .game_overlay h1{
+    font-size: 30px;
+  }
+
+  .game_overlay label{
+    font-size: 18px;
+  }
+
+  .game_overlay input{
+    width: 30px;
+    height: 18px;
+  }
+
+  .x_o_box{
+    font-size: 60px;
+  }
+
+  #start_game{
+    width: 125px;
+    height: 35px;
+    font-size: 18px;
+  }
+}
+
+@media (width < 320px) {
+  .game_overlay{
+    width: 250px;
+    height: 380px;
+  }
+
+  .game_overlay h1{
+    font-size: 24px;
+  }
+
+  .game_overlay label{
+    font-size: 18px;
+  }
+
+  .game_overlay input{
+    width: 30px;
+    height: 18px;
+  }
+
+  .x_o_box{
+    font-size: 55px;
+  }
+
+  #start_game{
+    width: 120px;
+    height: 30px;
+    font-size: 16px;
+  }
+}
+
+@media (width<=520px) {
+  .game{
+    width: 400px;
+  }
+
+  .game_toggler,.game_toggler_win_draw{
+    font-size: 48px;
+  }
+
+  #grid_button{
+    font-size: 65px;
+  }
+
+  #reset_button{
+    width: 32%;
+    font-size: 24px;
+  }
+
+}
+
+@media (width<=450px) {
+  .game{
+    width: 300px;
+    height: 500px;
+    gap: 35px;
+  }
+
+  .game_toggler,.game_toggler_win_draw{
+    font-size: 40px;
+  }
+
+  #grid_button{
+    font-size: 55px;
+  }
+
+  #reset_button{
+    width: 38%;
+    font-size: 20px;
+  }
+
+}
+
+@media (width<=350px) {
+  .game{
+    width: 250px;
+    height: 350px;
+    gap: 28px;
+  }
+
+  .game_toggler,.game_toggler_win_draw{
+    font-size: 25px;
+  }
+
+  #grid_button{
+    font-size: 40px;
+  }
+
+  #reset_button{
+    width: 38%;
+    font-size: 16px;
+  }
+}
+

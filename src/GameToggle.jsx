@@ -1,34 +1,37 @@
 export default function GameToggle({ turnOf, colors, isWin, isDraw }) {
   let style = {
     backgroundColor: `${turnOf[0] === "X" ? colors.color_x : colors.color_o}`,
-    transform: `${turnOf[0] === "X" ? "translateX(0%)" : "translateX(100%)"}`,
+    left: `${turnOf[0] === "X" ? "0%" : "50%"}`,
+    transform: "scale(1)",
   };
 
-  let winStyle = {
-    width: "100%",
-    transform: "translate(0%)",
-    backgroundColor: `${isWin[1] === "X" ? colors.color_x : colors.color_o}`,
-  };
+  let text = turnOf[0];
+  let winDrawText = "";
+  let winDrawStyle = { backgroundColor: "#ffffff", transform: "scale(0)" };
 
-  let drawStyle = { ...winStyle, backgroundColor: "#f49595" };
+  if (isWin[0] || isDraw) {
+    style = { ...style, transform: "scale(0)" };
 
-  let final_style = style;
-  if (isWin[0]) {
-    final_style = winStyle;
-  } else if (isDraw) {
-    final_style = drawStyle;
-  }
-
-  let final_text = turnOf[0];
-  if (isWin[0]) {
-    final_text = `${isWin[1]} Won`;
-  } else if (isDraw) {
-    final_text = "Draw";
+    if (isWin[0]) {
+      winDrawStyle = {
+        backgroundColor: `${
+          isWin[1] === "X" ? colors.color_x : colors.color_o
+        }`,
+        transform: "scale(1)",
+      };
+      winDrawText = `${isWin[1]} Won`;
+    } else {
+      winDrawStyle = { backgroundColor: "#f49595", transform: "scale(1)" };
+      winDrawText = "Draw";
+    }
   }
   return (
     <div className="game_toggle_box">
-      <div className="game_toggler" style={final_style}>
-        {final_text}
+      <div className="game_toggler_win_draw" style={winDrawStyle}>
+        {winDrawText}
+      </div>
+      <div className="game_toggler" style={style}>
+        {text}
       </div>
     </div>
   );

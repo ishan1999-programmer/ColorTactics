@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import GameGrid from "./GameGrid";
 import GameToggle from "./GameToggle";
 
-export default function Game({ gameStatus, setGameStatus, colors, setColors }) {
+export default function Game({ gameStatus, setGameStatus, colors }) {
   let [turnOf, setTurnOf] = useState(["X", 0]);
   let [cellsArray, setCellsArray] = useState(intial_cells_array);
   let [isWin, setIsWin] = useState([false, ""]);

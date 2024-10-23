@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export default function ColorsSelector({
   gameStatus,
   setGameStatus,
@@ -11,7 +9,6 @@ export default function ColorsSelector({
   return (
     <div className={className}>
       <h1>Choose Custom Colors for your X and O</h1>
-      <br />
       <label htmlFor="color_selector_x">Choose a Color for X:</label>
       <input
         type="color"

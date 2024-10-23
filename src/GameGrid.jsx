@@ -1,4 +1,3 @@
-import { useState } from "react";
 import GameGridCell from "./GameGridCell";
 
 export default function GameGrid({

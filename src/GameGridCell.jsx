@@ -1,9 +1,4 @@
-import { useState } from "react";
-
 export default function GameGridCell({
-  turnOf,
-  setTurnOf,
-  colors,
   text,
   isActive,
   index,
