@@ -5,7 +5,7 @@ import GameToggle from "./GameToggle";
 export default function Game({ gameStatus, setGameStatus, colors }) {
   let [turnOf, setTurnOf] = useState(["X", 0]);
   let [cellsArray, setCellsArray] = useState(intial_cells_array);
-  let [isWin, setIsWin] = useState([false, ""]);
+  let [isWin, setIsWin] = useState([false, "", []]);
   let [isDraw, setIsDraw] = useState(false);
 
   let className = "game";
@@ -38,7 +38,7 @@ export default function Game({ gameStatus, setGameStatus, colors }) {
     setGameStatus("colorSelecting");
     setTurnOf(["X", 0]);
     setCellsArray(intial_cells_array);
-    setIsWin([false, ""]);
+    setIsWin([false, "", []]);
     setIsDraw(false);
   }
 
@@ -50,7 +50,7 @@ export default function Game({ gameStatus, setGameStatus, colors }) {
         cellsArray[b].text === cellsArray[c].text &&
         cellsArray[a].text !== ""
       ) {
-        setIsWin([true, cellsArray[a].text]);
+        setIsWin([true, cellsArray[a].text, [a, b, c]]);
         return;
       }
     }

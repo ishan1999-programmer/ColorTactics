@@ -6,6 +6,7 @@ export default function GameGrid({
   cellsArray,
   setCellsArray,
   isWin,
+  colors,
 }) {
   function handleCellClick(index) {
     setCellsArray(
@@ -28,6 +29,7 @@ export default function GameGrid({
       index={idx}
       handleCellClick={handleCellClick}
       isWin={isWin}
+      colors={colors}
     />
   ));
   return <div className="game_grid">{game_grid_cell_array}</div>;
